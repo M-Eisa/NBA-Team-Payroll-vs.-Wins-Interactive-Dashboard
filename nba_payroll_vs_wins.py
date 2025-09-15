@@ -13,7 +13,18 @@ from sklearn.linear_model import LinearRegression
 
 # Define dataset with NBA team payroll, wins data, and team names for each season
 data = {
-    '2023-2024': {
+    '2024-2025': {
+        'team_payroll': [220708856, 203708244, 195348491, 192057940, 191906878, 185864258, 182559432, 176102077, 174411922, 174124752,
+                         173806822, 172778396, 171336738, 170516134, 170316619, 170057021, 169543082, 168575524, 168312896, 167811057,
+                         167012048, 166418720, 165903638, 165722496, 165110486, 163038023, 162395330, 154060898, 152308863, 140501660],
+        'wins': [36, 49, 61, 50, 51, 50, 48, 37, 39, 50, 18, 21, 24, 30, 48, 40, 50, 19, 26, 40,
+                 36, 68, 48, 39, 64, 52, 34, 17, 41, 44],
+        'team_name': ['Phoenix Suns', 'Minnesota Timberwolves', 'Boston Celtics', 'Los Angeles Lakers', 'New York Knicks', 'Denver Nuggets',
+                      'Milwaukee Bucks', 'Miami Heat', 'Dallas Mavericks', 'LA Clippers', 'Washington Wizards', 'New Orleans Pelicans',
+                      'Philadelphia 76ers', 'Toronto Raptors', 'Golden State Warriors', 'Atlanta Hawks', 'Indiana Pacers', 'Charlotte Hornets',
+                      'Brooklyn Nets', 'Sacramento Kings', 'Portland Trail Blazers', 'Oklahoma City Thunder', 'Memphis Grizzlies', 'Chicago Bulls',
+                      'Cleveland Cavaliers', 'Houston Rockets', 'San Antonio Spurs', 'Utah Jazz', 'Orlando Magic', 'Detroit Pistons']
+    },'2023-2024': {
         'team_payroll': [209354737, 201366679, 193838882, 187346674, 186940921, 180922992, 177143542, 169876920, 167755884, 167403924,
                          166874287, 166434327, 166271894, 165630436, 165263993, 164990518, 163054678, 162649524, 162515272, 159153393,
                          155015136, 153564021, 150856313, 149356730, 148722330, 142867770, 139233014, 135774484, 133738448, 132643598],
@@ -190,6 +201,21 @@ modern_theme = {
     'hover_box_border': '#4895ef'
 }
 
+# Color palette for plotting seasons
+season_colors = [
+    '#636efa',  # Blue
+    '#ef553b',  # Red
+    '#00cc96',  # Green
+    '#ab63fa',  # Purple
+    '#ffa15a',  # Orange
+    '#19d3f3',  # Cyan
+    '#ff6692',  # Pink
+    '#fecb52',  # Yellow
+    '#6a5acd',  # Slate Blue
+    '#ff4500',  # Orange-Red
+    '#40e0d0',  # Turquoise
+]
+
 # Initialize the Dash app with Bootstrap for styling
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.title = "NBA Payroll Analysis Dashboard"
@@ -337,7 +363,7 @@ def update_correlation(selected_season, selected_teams, view_mode):
         icon_color = "#0dcaf0"
     elif correlation > 0.1:
         interpretation = "Weak positive correlation"
-        icon_color = "#0d6efd"  
+        icon_color = "#0d6efd"
     elif correlation > -0.1:
         interpretation = "No significant correlation"
         icon_color = "#6c757d"
@@ -423,7 +449,7 @@ def update_graph(selected_season, selected_teams, view_mode):
         # Add scatter points
         if selected_season == 'All':
             # Color by season when showing all seasons
-            colors = px.colors.qualitative.Plotly
+            colors = season_colors
 
             for i, season in enumerate(sorted(filtered_df['season'].unique())):
                 season_data = filtered_df[filtered_df['season'] == season]
