@@ -24,11 +24,11 @@ This project explores whether money can buy wins in the NBA by analyzing team pa
 *Interactive scatter plot showing payroll vs wins correlation with team filtering*
 
 ### Data Insights Panel
-![Insights Panel](screenshots/insights-panel.png)
+![Insights Panel](screenshots/insights_panel.png)
 *Team efficiency rankings and performance analysis with correlation insights*
 
 ### Team Efficiency Analysis  
-![Efficiency View](screenshots/efficiency-view.png)
+![Efficiency View](screenshots/efficiency_view.png)
 *Team efficiency ranking for 2019-20 season showing wins per million dollars spent*
 
 ## 🛠️ Technologies Used
