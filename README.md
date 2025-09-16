@@ -120,6 +120,7 @@ python nba_payroll_vs_wins.py
 ### Modern Design
 - Clean, professional aesthetic suitable for business presentations
 - Intuitive navigation and filtering options
+- Modern colour scheme with professional typography and spacing
 
 ### Interactive Elements
 - Hover tooltips with detailed team information
