@@ -1,6 +1,6 @@
 # NBA Team Payroll vs. Wins Interactive Dashboard
 
-A comprehensive interactive dashboard analyzing the relationship between NBA team payrolls and on-court performance across multiple seasons (2014-2025).
+A comprehensive interactive dashboard analyzing the relationship between NBA team payrolls and wins across multiple seasons (2014-2025).
 
 ## 📊 Overview
 
@@ -16,6 +16,12 @@ This project explores whether money can buy wins in the NBA by analyzing team pa
 - **Performance Insights**: Identify overperforming and underperforming teams
 - **Data Export**: CSV export functionality for further analysis
 - **Responsive Design**: Professional dashboard interface built with Bootstrap
+
+## 📸 Screenshots
+
+### Dashboard Overview
+![Main Dashboard](screenshots/main_dashboard.png)
+*Interactive scatter plot showing payroll vs wins correlation with team filtering*
 
 ## 🛠️ Technologies Used
 
